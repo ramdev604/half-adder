@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
-`include pes_ripple_counter.v
+`include pes_half_adder.v
 `default_nettype none
 /*
  *-------------------------------------------------------------
@@ -35,7 +35,7 @@
  *-------------------------------------------------------------
  */
 
-module user_proj_ripple_counter #(
+module user_proj_half_adder #(
     parameter BITS = 16
 )(
 `ifdef USE_POWER_PINS
@@ -70,7 +70,7 @@ module user_proj_ripple_counter #(
     //output [2:0] irq
 );
 
-pes_ripco pes_ripco(.clk(wb_clk_i),
+pes_ha pes_ha(.clk(wb_clk_i),
 		.reset(wb_rst_i),
 		    .q(io_out[1:0]));
 /*
